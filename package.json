@@ -1,0 +1,32 @@
+{
+  "name": "journal",
+  "version": "1.0.0",
+  "description": "-",
+  "main": "static/index.js",
+  "scripts": {
+    "start": "webpack serve",
+    "build": "webpack"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ilyacartwright/journal.git"
+  },
+  "keywords": [
+    "journal"
+  ],
+  "author": "micha",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ilyacartwright/journal/issues"
+  },
+  "homepage": "https://github.com/ilyacartwright/journal#readme",
+  "dependencies": {
+    "webpack-dev-server": "^4.15.0"
+  },
+  "devDependencies": {
+    "css-loader": "^6.7.3",
+    "style-loader": "^3.3.2",
+    "webpack": "^5.82.1",
+    "webpack-cli": "^5.1.1"
+  }
+}
