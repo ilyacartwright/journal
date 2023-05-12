@@ -7,3 +7,4 @@ class AdminPlaceWork(admin.TabularInline):
 @admin.register(Employees)
 class AdminEmpluyees(admin.ModelAdmin):
     inlines = [AdminPlaceWork,]
+    list_display = ['last_name', 'first_name', 'surname']

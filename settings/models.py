@@ -12,8 +12,8 @@ class Schools(models.Model):
     phone = PhoneNumberField(_('Номер телефона:'), null=False, blank=False, unique=True)
 
     class Meta:
-        verbose_name = 'School'
-        verbose_name_plural = 'Schools'
+        verbose_name = 'Школа'
+        verbose_name_plural = 'Школы'
 
     def __str__(self):
         return self.full_name
@@ -23,8 +23,18 @@ class Positions(models.Model):
     name = models.CharField(_("Название"), max_length=50)
 
     class Meta:
-        verbose_name = 'Position'
-        verbose_name_plural = 'Positions'
+        verbose_name = 'Должность'
+        verbose_name_plural = 'Должности'
+
+    def __str__(self):
+        return self.name
+    
+class AcademicSubjects(models.Model):
+    name = models.CharField(_("Название"), max_length=50)
+
+    class Meta:
+        verbose_name = 'Предмет'
+        verbose_name_plural = 'Учебные предметы'
 
     def __str__(self):
         return self.name

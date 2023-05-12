@@ -10,14 +10,15 @@ class Employees(models.Model):
     surname = models.CharField(_("Отчество"), max_length=50, blank=True, null=True)
 
     class Meta:
-        verbose_name = 'Employees'
-        verbose_name_plural = 'Employee'
+        verbose_name = 'Сотрудник'
+        verbose_name_plural = 'Сотрудники'
 
     def __str__(self):
-        return self.last_name, self.first_name, self.surname
+        return f'{self.last_name} {self.first_name} {self.surname}'
 
 class PlaceWork(models.Model):
     employees = models.ForeignKey("Employees", verbose_name=_("Сотрудник"), on_delete=models.CASCADE)
     school = models.ManyToManyField("settings.Schools", verbose_name=_("Школа"))
     position = models.ManyToManyField("settings.Positions", verbose_name=_("Должность"))
+    subject = models.ManyToManyField("settings.AcademicSubjects", verbose_name=_("Предметы:"))
 
