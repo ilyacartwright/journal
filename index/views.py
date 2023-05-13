@@ -3,7 +3,10 @@ import datetime
 
 
 def render_indexpage(request):
-    date = datetime.datetime.now()
-    return render(request, 'page/index.html', {
-        'date':date,
-        })
+    if request.user.is_authenticated:
+        return render(request, 'page/auth/index.html', {})
+    else:
+        date = datetime.datetime.now()
+        return render(request, 'page/index.html', {
+            'date':date,
+            })
