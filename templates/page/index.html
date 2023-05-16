@@ -10,40 +10,22 @@
             <div class="frame">
                 <div class="nav">
                     <ul class" links">
-                        <li class="signin-active authli"><a class="btn">Сотрудник</a></li>
-                        <li class="signup-inactive authli"><a class="btn">Студент </a></li>
+                        <li class="signin-active authli"><a class="btn">Авторизация</a></li>
                     </ul>
                 </div>
                 <div ng-app ng-init="checked= false">
-                    <form class="form-signin" action="" method="post"
-                        name="form">
+                    <form class="form-signin" action="" method="post"name="form">
+                        {% csrf_token %}
                         <label for="username">Username</label>
-                        <input class="form-styling" type="text" name="username"
-                            placeholder=""/>
+                        {{ form.username }}
                         <label for="password">Password</label>
-                        <input class="form-styling" type="text" name="password"
-                            placeholder=""/>
+                        {{ form.password }}
                         <input type="checkbox" id="checkbox"/>
                         <label for="checkbox"><span class="ui"></span>Запомнить
                             меня</label>
                         <div class="btn-animate">
-                            <a class="btn-signin">Войти</a>
-                        </div>
-                    </form>
-
-                    <form class="form-signup" action="" method="post"
-                        name="form">
-                        <label for="username">Username</label>
-                        <input class="form-styling" type="text" name="username"
-                            placeholder=""/>
-                        <label for="password">Password</label>
-                        <input class="form-styling" type="text" name="password"
-                            placeholder=""/>
-                        <input type="checkbox" id="checkbox"/>
-                        <label for="checkbox"><span class="ui"></span>Запомнить
-                            меня</label>
-                        <div class="btn-animate">
-                            <a class="btn-signin">Войти</a>
+                            <input type="submit" class="btn-signin" value="Войти">
+                            {% comment %} <a class="btn-signin">Войти</a> {% endcomment %}
                         </div>
                     </form>
 

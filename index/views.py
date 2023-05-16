@@ -1,5 +1,7 @@
 from django.shortcuts import render
 import datetime
+from django.contrib.auth.forms import AuthenticationForm
+from users.forms import AuthForm
 
 
 def render_indexpage(request):
@@ -7,6 +9,8 @@ def render_indexpage(request):
         return render(request, 'page/auth/index.html', {})
     else:
         date = datetime.datetime.now()
+        form = AuthForm()
         return render(request, 'page/index.html', {
             'date':date,
+            'form': form,
             })

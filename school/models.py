@@ -1,10 +1,10 @@
 from django.db import models
 from django.utils.translation import gettext as _
+from django.conf import settings
 
 
 class Employees(models.Model):
-    identifier = models.CharField(_("Идентикификатор/Логин"), max_length=50)
-    password = models.CharField(_("Пароль"), max_length=50)
+    user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
     first_name = models.CharField(_("Имя"), max_length=50)
     last_name = models.CharField(_("Фамилия"), max_length=50)
     surname = models.CharField(_("Отчество"), max_length=50, blank=True, null=True)
