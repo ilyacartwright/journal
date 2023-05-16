@@ -27,3 +27,5 @@ class PlaceWork(models.Model):
     position = models.ManyToManyField("settings.Positions", verbose_name=_("Должность"))
     subject = models.ManyToManyField("settings.AcademicSubjects", verbose_name=_("Предметы:"))
 
+
+
