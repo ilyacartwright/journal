@@ -4,14 +4,18 @@ from django.urls import reverse_lazy
 from django.contrib.auth.decorators import login_required
 import datetime
 
-from school.models import Employees
+from school.models import Employees, Items
 from users.forms import AuthForm
 
 
 @login_required(login_url='index:login')
 def render_indexpage(request):
         employees = Employees.objects.get(user=request.user)
-        return render(request, 'page/auth/index.html', {'employees': employees,})
+        classes = Items.objects.filter(teacher=employees)
+        def filters(self):
+            for item in classes.filter():
+                return item.classes
+        return render(request, 'page/auth/index.html', {'employees': employees, 'classes': filters(request)})
 
     
 class LoginUser(LoginView):
