@@ -1,6 +1,8 @@
 from django.db import models
 from django.utils.translation import gettext as _
 from django.conf import settings
+from phonenumber_field.modelfields import PhoneNumberField
+
 
 
 class Employees(models.Model):
@@ -8,6 +10,9 @@ class Employees(models.Model):
     first_name = models.CharField(_("Имя"), max_length=50)
     last_name = models.CharField(_("Фамилия"), max_length=50)
     surname = models.CharField(_("Отчество"), max_length=50, blank=True, null=True)
+    phone = PhoneNumberField(_('Номер телефона:'), null=True, blank=True, unique=True)
+    management = models.BooleanField(_("Сотрудник может иметь класное руководство?"), null=True, blank=True)
+
 
     class Meta:
         verbose_name = 'Сотрудник'
