@@ -1,0 +1,18 @@
+Name: {{ user.first_name }} <br>
+Surname: {{ user.last_name }} <br>
+Email: {{ user.email }} <br>
+
+{% for item in employees.placework_set.all %}
+{% for items in item.school.all %}
+School: {{ items }}
+{% endfor %} <br>
+
+{% for items in item.position.all %}
+Position: {{ items }}
+{% endfor %} <br>
+
+{% for items in item.subject.all %}
+Subject: {{ items }}
+{% endfor %} <br>
+
+{% endfor %}
