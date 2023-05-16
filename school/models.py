@@ -41,3 +41,27 @@ class Cabinet(models.Model):
     def __str__(self):
         return f'{self.number} | {self.name}'
     
+class Classes(models.Model):
+    school = models.ForeignKey("settings.Schools", verbose_name=_("Школа"), on_delete=models.CASCADE)
+    number = models.IntegerField(_("Номер классы/группы"))
+
+    def __str__(self):
+        return f'{self.number}'
+    
+    class Meta:
+        verbose_name = 'Класс/группа'
+        verbose_name_plural = 'Классы/группы'
+
+
+class Groups(models.Model):
+    classes = models.ForeignKey("school.Classes", verbose_name=_("Класс"), on_delete=models.CASCADE)
+    letter = models.CharField(_("Буква/номер"), max_length=10)
+    supervisor = models.ForeignKey("school.Employees", verbose_name=_("Классный руководитель/Руководитель"), on_delete=models.CASCADE, blank=True, null=True)
+
+
+class Items(models.Model):
+    classes = models.ForeignKey("school.Classes", verbose_name=_("Класс"), on_delete=models.CASCADE)
+    item = models.ForeignKey("settings.AcademicSubjects", verbose_name=_("Предмет"), on_delete=models.CASCADE)
+    group = models.IntegerField(_("Номер группы (если есть)"), null=True, blank=True)
+    teacher = models.ForeignKey("school.Employees", verbose_name=_("Педагог"), on_delete=models.CASCADE, blank=True, null=True)
+
