@@ -5,37 +5,41 @@
 
 <div class="row">
     <div class="col-8"></div>
-    <div class="col-4">
-        <div class=" mt-5">
-            <div class="frame">
-                <div class="nav">
-                    <ul class" links">
-                        <li class="signin-active authli"><a class="btn">Авторизация</a></li>
-                    </ul>
-                </div>
-                <div ng-app ng-init="checked= false">
-                    <form class="form-signin" action="" method="post"name="form">
-                        {% csrf_token %}
-                        <label for="username">Username</label>
-                        {{ form.username }}
-                        <label for="password">Password</label>
-                        {{ form.password }}
-                        <input type="checkbox" id="checkbox"/>
-                        <label for="checkbox"><span class="ui"></span>Запомнить
-                            меня</label>
-                        <div class="btn-animate">
-                            <input type="submit" class="btn-signin" value="Войти">
-                            {% comment %} <a class="btn-signin">Войти</a> {% endcomment %}
-                        </div>
-                    </form>
+    {% if request.user.is_authenticated %}
+    
+    {% else %}
+    
+        <div class="col-4">
+            <div class=" mt-5">
+                <div class="frame">
+                    <div class="nav">
+                        <ul class" links">
+                            <li class="signin-active authli"><a class="btn">Авторизация</a></li>
+                        </ul>
+                    </div>
+                    <div ng-app ng-init="checked= false">
+                        <form class="form-signin" method="post" name="form">
+                            {% csrf_token %}
+                            <label for="username">Username</label>
+                            {{ form.username }}
+                            <label for="password">Password</label>
+                            {{ form.password }}
+                            <input type="checkbox" id="checkbox"/>
+                            <label for="checkbox"><span class="ui"></span>Запомнить
+                                меня</label>
+                            <div class="btn-animate">
+                                <input type="submit" class="btn-signin" value="Войти">
+                            </div>
+                        </form>
 
 
+                    </div>
                 </div>
+
             </div>
 
         </div>
-
-
-    </div>
+    {% endif %}
+</div>
 
     {% endblock content %}
