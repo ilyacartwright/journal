@@ -49,20 +49,6 @@
     cursor: pointer;
 }
 
-.signup-active a {
-    cursor: pointer;
-    color: #ffffff;
-    text-decoration: none;
-    border-bottom: solid 2px #1059FF;
-    padding-bottom: 10px;
-}
-
-.signup-inactive a {
-    cursor: pointer;
-    color: rgba(255, 255, 255, .3);
-    text-decoration: none;
-    transition: all .25s ease;
-}
 
 .form-signin {
     width: 430px;
@@ -79,34 +65,8 @@
     opacity: .0;
 }
 
-.form-signup {
-    width: 430px;
-    height: 375px;
-    font-size: 16px;
-    font-weight: 300;
-    padding-left: 37px;
-    padding-right: 37px;
-    position: relative;
-    top: -375px;
-    left: 400px;
-    opacity: 0;
-    transition: all .5s ease;
-}
 
-.form-signup-left {
-    transform: translateX(-399px);
-    opacity: 1;
-}
-
-.form-signup-down {
-    top: 0px;
-    opacity: 0;
-}
-
-
-
-.form-signin input,
-.form-signup input {
+.form-signin input {
     color: #ffffff;
     font-size: 13px;
 }
@@ -136,8 +96,6 @@ label {
 }
 
 .form-signin input:focus,
-textarea:focus,
-.form-signup input:focus,
 textarea:focus {
     background: rgba(255, 255, 255, .3);
     border: none;
@@ -230,22 +188,6 @@ textarea:focus {
     margin-top: -1px;
 }
 
-.btn-signup {
-    float: left;
-    font-weight: 700;
-    text-transform: uppercase;
-    font-size: 13px;
-    text-align: center;
-    color: #ffffff;
-    padding-top: 8px;
-    width: 100%;
-    height: 35px;
-    border: none;
-    border-radius: 20px;
-    margin-top: 23px;
-    background-color: #1059FF;
-}
-
 .btn-signin {
     float: left;
     padding-top: 8px;
@@ -287,8 +229,8 @@ textarea:focus {
     background-color: rgba(255, 255, 255, 1);
 }
 
-a.btn-signup:hover,
-a.btn-signin:hover {
+
+input.btn-signin:hover {
     cursor: pointer;
     background-color: #0F4FE6;
     transition: background-color .5s;

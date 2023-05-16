@@ -708,17 +708,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n// extracted by mini-css-extr
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! jquery */ \"./node_modules/jquery/dist/jquery.js\");\n/* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(jquery__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var _scss_includes_scss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./scss/includes.scss */ \"./static/scss/includes.scss\");\n/* harmony import */ var bootstrap__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! bootstrap */ \"./node_modules/bootstrap/dist/js/bootstrap.esm.js\");\n/* harmony import */ var _js_auth__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./js/auth */ \"./static/js/auth.js\");\n/* harmony import */ var _js_auth__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_js_auth__WEBPACK_IMPORTED_MODULE_3__);\n\r\n\r\n\r\n\n\n//# sourceURL=webpack://journal/./static/index.js?");
-
-/***/ }),
-
-/***/ "./static/js/auth.js":
-/*!***************************!*\
-  !*** ./static/js/auth.js ***!
-  \***************************/
-/***/ (() => {
-
-eval("\n\n//# sourceURL=webpack://journal/./static/js/auth.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! jquery */ \"./node_modules/jquery/dist/jquery.js\");\n/* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(jquery__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var _scss_includes_scss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./scss/includes.scss */ \"./static/scss/includes.scss\");\n/* harmony import */ var bootstrap__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! bootstrap */ \"./node_modules/bootstrap/dist/js/bootstrap.esm.js\");\n\r\n\r\n\n\n//# sourceURL=webpack://journal/./static/index.js?");
 
 /***/ })
 
