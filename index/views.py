@@ -1,7 +1,8 @@
-from django.shortcuts import render
-from django.contrib.auth.views import LoginView
+from django.shortcuts import redirect, render
+from django.contrib.auth.views import LoginView, LogoutView
 from django.urls import reverse_lazy
 from django.contrib.auth.decorators import login_required
+from django.contrib.auth import logout
 import datetime
 
 from school.models import Employees, Items
@@ -31,3 +32,7 @@ class LoginUser(LoginView):
         context["date"] = datetime.datetime.now()
         return context
     
+
+def logout_view(request):
+    logout(request)
+    return redirect('index:login')
