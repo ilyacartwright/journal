@@ -30,13 +30,36 @@ Subject: {{ items }}
 
 {% block content %}
 <div class="row justify-content-center align-items-center choice-block">
-    <div class="col-6 rounded-1 p-0 choice">
+    <div class="col col-md-9 col-lg-7 col-xl-6 col-xxl-5 rounded-1 p-0 choice">
         <div class="choice-header rounded-top">
             <h1 class="pt-1 text-center">Профиль</h1>
             <a href="{% url 'index:logout' %}" class="logout">Выйти</a>
-            <div></div>
         </div>
-        <div></div>
+        <div class="choice-body">
+            <div class="welcome">
+                <div class="welcome-img"></div>
+                <span class="welcome-text">Добро пожаловать, в Электронный журнал!</span>
+            </div>
+            <p class="choice-information">Выберите профиль, в который хотите войти</p>
+            <div class="choice-table">
+                <div class="choice-table-title">
+                    <span>Ильичёвс Михаилс Александрович</span>
+                    <div class="choice-table-title__img"></div>
+                </div>
+                <div class="choice-table-body">
+                    <small>skolēns 12.a, Rīgas 33. vidusskola (2020./2021. m.g.)</small>
+                    <a href="#" class="choice-table-body__btn"></a>
+                </div>
+                <div class="choice-table-body">
+                    <small>skolēns 12.a, Rīgas 33. vidusskola (2020./2021. m.g.)</small>
+                    <a href="#" class="choice-table-body__btn"></a>
+                </div>
+                <div class="choice-table-body">
+                    <small>skolēns 12.a, Rīgas 33. vidusskola (2020./2021. m.g.)</small>
+                    <a href="#" class="choice-table-body__btn"></a>
+                </div>
+            </div>
+        </div>
     </div>
 </div>
 {% endblock content %}
