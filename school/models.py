@@ -52,11 +52,6 @@ class Classes(models.Model):
         verbose_name = 'Класс/группа'
         verbose_name_plural = 'Классы/группы'
 
-    def testik(self):
-        for item in Items.objects.filter(classes=self):
-            import ipdb; ipdb.set_trace()
-            print(item)
-
 
 class Groups(models.Model):
     classes = models.ForeignKey("school.Classes", verbose_name=_("Класс"), on_delete=models.CASCADE)

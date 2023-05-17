@@ -1,9 +1,10 @@
 /*!********************************************************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./static/scss/includes.scss ***!
   \********************************************************************************************************************/
-body {
-  background: green; }
-
+@import url(https://fonts.googleapis.com/css2?family=Ysabeau:ital@1&display=swap);
+/*!************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./static/scss/includes.scss (1) ***!
+  \************************************************************************************************************************/
 .frame {
   height: 400px;
   width: 430px;
@@ -8596,4 +8597,21 @@ textarea.form-control-lg {
     display: inline-flex !important; }
   .d-print-none {
     display: none !important; } }
+
+body {
+  background-image: linear-gradient(to bottom, rgba(229, 229, 230, 0.5), rgba(106, 106, 107, 0.5));
+  height: 100vh; }
+
+.choice-block {
+  height: 90vh; }
+
+.choice {
+  height: 400px;
+  background-color: white; }
+  .choice-header {
+    height: 60px;
+    width: 100%;
+    background-color: #ff9100; }
+    .choice-header h1, .choice-header .h1 {
+      font-family: 'Ysabeau', sans-serif; }
 
