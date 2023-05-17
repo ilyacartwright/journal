@@ -1,2 +1,4 @@
 django==4.1.4
 ipdb==0.13.13
+django-phonenumber-field==7.1.0
+phonenumbers==8.13.11
