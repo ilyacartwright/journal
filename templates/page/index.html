@@ -1,6 +1,7 @@
 {% extends 'page/base.html' %}
+{% load i18n %}
 
-{% block title %}Главная страница{% endblock title %}
+{% block title %}{% trans "Главная страница" %}{% endblock title %}
 {% block content %}
 
 <div class="row">
@@ -14,21 +15,20 @@
                 <div class="frame">
                     <div class="nav">
                         <ul class" links">
-                            <li class="signin-active authli"><a class="btn">Авторизация</a></li>
+                            <li class="signin-active authli"><a class="btn">{% trans "Авторизация" %}</a></li>
                         </ul>
                     </div>
                     <div ng-app ng-init="checked= false">
                         <form class="form-signin" method="post" name="form">
                             {% csrf_token %}
-                            <label for="username">Username</label>
+                            <label for="username">{% trans "Логин" %}</label>
                             {{ form.username }}
-                            <label for="password">Password</label>
+                            <label for="password">{% trans "Пароль" %}</label>
                             {{ form.password }}
                             <input type="checkbox" id="checkbox"/>
-                            <label for="checkbox"><span class="ui"></span>Запомнить
-                                меня</label>
+                            <label for="checkbox"><span class="ui"></span>{% trans "Запомнить меня" %}</label>
                             <div class="btn-animate">
-                                <input type="submit" class="btn-signin" value="Войти">
+                                <input type="submit" class="btn-signin" value="{% trans "Войти" %}">
                             </div>
                         </form>
 

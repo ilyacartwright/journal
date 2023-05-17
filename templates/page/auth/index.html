@@ -12,8 +12,8 @@
         </div>
         <div class="choice-body">
             <div class="welcome">
-                <div class="welcome-img"></div>
-                <span class="welcome-text">{% trans "Добро пожаловать, в Электронный журнал!" %}</span>
+                <div class="welcome-img d-none d-md-block"></div>
+                <span class="welcome-text text-center text-md-start">{% trans "Добро пожаловать, в Электронный журнал!" %}</span>
             </div>
             <p class="choice-information">{% trans "Выберите профиль, в который хотите войти" %}</p>
             <div class="choice-table">
@@ -25,7 +25,7 @@
                     {% for items in employee.placework_set.all %}
                         <div class="choice-table-body">
                             <small>{% for item in items.position.all %}{{ item }}, {% endfor %} {{ items.school }} </small>
-                            <a href="#" class="choice-table-body__btn"></a>
+                            <a href="{% url 'school:school' items.school.pk %}" class="choice-table-body__btn"></a>
                         </div>
                     {% endfor %}
                 {% endfor %}

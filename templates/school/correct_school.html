@@ -1,0 +1,16 @@
+{% extends 'school/base.html' %}
+
+{% block content %}
+{% for i in employees %}
+{% for items in i.placework_set.all %}
+{% if object.pk == items.school.pk %}
+
+{% block context %}{% endblock context %}
+
+{% endif %}
+{% endfor %}
+{% endfor %}
+
+{% endblock content %}
+
+
