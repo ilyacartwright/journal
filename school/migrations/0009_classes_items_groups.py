@@ -5,42 +5,116 @@ import django.db.models.deletion
 
 
 class Migration(migrations.Migration):
-
     dependencies = [
-        ('settings', '0003_academicsubjects_alter_positions_options_and_more'),
-        ('school', '0008_cabinet_school'),
+        ("settings", "0003_academicsubjects_alter_positions_options_and_more"),
+        ("school", "0008_cabinet_school"),
     ]
 
     operations = [
         migrations.CreateModel(
-            name='Classes',
+            name="Classes",
             fields=[
-                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('number', models.IntegerField(verbose_name='Номер классы/группы')),
-                ('school', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='settings.schools', verbose_name='Школа')),
+                (
+                    "id",
+                    models.BigAutoField(
+                        auto_created=True,
+                        primary_key=True,
+                        serialize=False,
+                        verbose_name="ID",
+                    ),
+                ),
+                ("number", models.IntegerField(verbose_name="Номер классы/группы")),
+                (
+                    "school",
+                    models.ForeignKey(
+                        on_delete=django.db.models.deletion.CASCADE,
+                        to="settings.schools",
+                        verbose_name="Школа",
+                    ),
+                ),
             ],
             options={
-                'verbose_name': 'Класс/группа',
-                'verbose_name_plural': 'Классы/группы',
+                "verbose_name": "Класс/группа",
+                "verbose_name_plural": "Классы/группы",
             },
         ),
         migrations.CreateModel(
-            name='Items',
+            name="Items",
             fields=[
-                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('group', models.IntegerField(blank=True, null=True, verbose_name='Номер группы (если есть)')),
-                ('classes', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='school.classes', verbose_name='Класс')),
-                ('item', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='settings.academicsubjects', verbose_name='Предмет')),
-                ('teacher', models.ForeignKey(blank=True, null=True, on_delete=django.db.models.deletion.CASCADE, to='school.employees', verbose_name='Педагог')),
+                (
+                    "id",
+                    models.BigAutoField(
+                        auto_created=True,
+                        primary_key=True,
+                        serialize=False,
+                        verbose_name="ID",
+                    ),
+                ),
+                (
+                    "group",
+                    models.IntegerField(
+                        blank=True, null=True, verbose_name="Номер группы (если есть)"
+                    ),
+                ),
+                (
+                    "classes",
+                    models.ForeignKey(
+                        on_delete=django.db.models.deletion.CASCADE,
+                        to="school.classes",
+                        verbose_name="Класс",
+                    ),
+                ),
+                (
+                    "item",
+                    models.ForeignKey(
+                        on_delete=django.db.models.deletion.CASCADE,
+                        to="settings.academicsubjects",
+                        verbose_name="Предмет",
+                    ),
+                ),
+                (
+                    "teacher",
+                    models.ForeignKey(
+                        blank=True,
+                        null=True,
+                        on_delete=django.db.models.deletion.CASCADE,
+                        to="school.employees",
+                        verbose_name="Педагог",
+                    ),
+                ),
             ],
         ),
         migrations.CreateModel(
-            name='Groups',
+            name="Groups",
             fields=[
-                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('letter', models.CharField(max_length=10, verbose_name='Буква/номер')),
-                ('classes', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='school.classes', verbose_name='Класс')),
-                ('supervisor', models.ForeignKey(blank=True, null=True, on_delete=django.db.models.deletion.CASCADE, to='school.employees', verbose_name='Классный руководитель/Руководитель')),
+                (
+                    "id",
+                    models.BigAutoField(
+                        auto_created=True,
+                        primary_key=True,
+                        serialize=False,
+                        verbose_name="ID",
+                    ),
+                ),
+                ("letter", models.CharField(max_length=10, verbose_name="Буква/номер")),
+                (
+                    "classes",
+                    models.ForeignKey(
+                        on_delete=django.db.models.deletion.CASCADE,
+                        to="school.classes",
+                        verbose_name="Класс",
+                    ),
+                ),
+                (
+                    "supervisor",
+                    models.ForeignKey(
+                        blank=True,
+                        null=True,
+                        on_delete=django.db.models.deletion.CASCADE,
+                        to="school.employees",
+                        verbose_name="Классный руководитель/Руководитель",
+                    ),
+                ),
             ],
         ),
     ]

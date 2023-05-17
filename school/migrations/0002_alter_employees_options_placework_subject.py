@@ -4,20 +4,21 @@ from django.db import migrations, models
 
 
 class Migration(migrations.Migration):
-
     dependencies = [
-        ('settings', '0003_academicsubjects_alter_positions_options_and_more'),
-        ('school', '0001_initial'),
+        ("settings", "0003_academicsubjects_alter_positions_options_and_more"),
+        ("school", "0001_initial"),
     ]
 
     operations = [
         migrations.AlterModelOptions(
-            name='employees',
-            options={'verbose_name': 'Сотрудник', 'verbose_name_plural': 'Сотрудники'},
+            name="employees",
+            options={"verbose_name": "Сотрудник", "verbose_name_plural": "Сотрудники"},
         ),
         migrations.AddField(
-            model_name='placework',
-            name='subject',
-            field=models.ManyToManyField(to='settings.academicsubjects', verbose_name='Предметы:'),
+            model_name="placework",
+            name="subject",
+            field=models.ManyToManyField(
+                to="settings.academicsubjects", verbose_name="Предметы:"
+            ),
         ),
     ]

@@ -5,17 +5,21 @@ import django.db.models.deletion
 
 
 class Migration(migrations.Migration):
-
     dependencies = [
-        ('settings', '0003_academicsubjects_alter_positions_options_and_more'),
-        ('school', '0007_alter_cabinet_options'),
+        ("settings", "0003_academicsubjects_alter_positions_options_and_more"),
+        ("school", "0007_alter_cabinet_options"),
     ]
 
     operations = [
         migrations.AddField(
-            model_name='cabinet',
-            name='school',
-            field=models.ForeignKey(default=0, on_delete=django.db.models.deletion.CASCADE, to='settings.schools', verbose_name='Школа'),
+            model_name="cabinet",
+            name="school",
+            field=models.ForeignKey(
+                default=0,
+                on_delete=django.db.models.deletion.CASCADE,
+                to="settings.schools",
+                verbose_name="Школа",
+            ),
             preserve_default=False,
         ),
     ]

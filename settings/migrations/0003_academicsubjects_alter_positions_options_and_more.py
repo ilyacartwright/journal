@@ -4,29 +4,36 @@ from django.db import migrations, models
 
 
 class Migration(migrations.Migration):
-
     dependencies = [
-        ('settings', '0002_positions_alter_schools_phone'),
+        ("settings", "0002_positions_alter_schools_phone"),
     ]
 
     operations = [
         migrations.CreateModel(
-            name='AcademicSubjects',
+            name="AcademicSubjects",
             fields=[
-                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('name', models.CharField(max_length=50, verbose_name='Название')),
+                (
+                    "id",
+                    models.BigAutoField(
+                        auto_created=True,
+                        primary_key=True,
+                        serialize=False,
+                        verbose_name="ID",
+                    ),
+                ),
+                ("name", models.CharField(max_length=50, verbose_name="Название")),
             ],
             options={
-                'verbose_name': 'Предмет',
-                'verbose_name_plural': 'Учебные предметы',
+                "verbose_name": "Предмет",
+                "verbose_name_plural": "Учебные предметы",
             },
         ),
         migrations.AlterModelOptions(
-            name='positions',
-            options={'verbose_name': 'Должность', 'verbose_name_plural': 'Должности'},
+            name="positions",
+            options={"verbose_name": "Должность", "verbose_name_plural": "Должности"},
         ),
         migrations.AlterModelOptions(
-            name='schools',
-            options={'verbose_name': 'Школа', 'verbose_name_plural': 'Школы'},
+            name="schools",
+            options={"verbose_name": "Школа", "verbose_name_plural": "Школы"},
         ),
     ]

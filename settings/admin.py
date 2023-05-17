@@ -6,9 +6,11 @@ from .models import Schools, Positions, AcademicSubjects
 class AdminSchools(admin.ModelAdmin):
     pass
 
+
 @admin.register(Positions)
 class AdminPositions(admin.ModelAdmin):
     pass
+
 
 @admin.register(AcademicSubjects)
 class AdminAcademicSubjects(admin.ModelAdmin):

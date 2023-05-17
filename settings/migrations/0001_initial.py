@@ -5,26 +5,48 @@ import phonenumber_field.modelfields
 
 
 class Migration(migrations.Migration):
-
     initial = True
 
-    dependencies = [
-    ]
+    dependencies = []
 
     operations = [
         migrations.CreateModel(
-            name='Schools',
+            name="Schools",
             fields=[
-                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('full_name', models.CharField(max_length=128, verbose_name='Полное название')),
-                ('short_name', models.CharField(max_length=8, verbose_name='Сокращенное название')),
-                ('number', models.IntegerField(blank=True, null=True, verbose_name='Номер (если есть)')),
-                ('address', models.CharField(max_length=128, verbose_name='Адрес')),
-                ('phone', phonenumber_field.modelfields.PhoneNumberField(max_length=128, region=None, unique=True)),
+                (
+                    "id",
+                    models.BigAutoField(
+                        auto_created=True,
+                        primary_key=True,
+                        serialize=False,
+                        verbose_name="ID",
+                    ),
+                ),
+                (
+                    "full_name",
+                    models.CharField(max_length=128, verbose_name="Полное название"),
+                ),
+                (
+                    "short_name",
+                    models.CharField(max_length=8, verbose_name="Сокращенное название"),
+                ),
+                (
+                    "number",
+                    models.IntegerField(
+                        blank=True, null=True, verbose_name="Номер (если есть)"
+                    ),
+                ),
+                ("address", models.CharField(max_length=128, verbose_name="Адрес")),
+                (
+                    "phone",
+                    phonenumber_field.modelfields.PhoneNumberField(
+                        max_length=128, region=None, unique=True
+                    ),
+                ),
             ],
             options={
-                'verbose_name': 'School',
-                'verbose_name_plural': 'Schools',
+                "verbose_name": "School",
+                "verbose_name_plural": "Schools",
             },
         ),
     ]

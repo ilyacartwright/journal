@@ -5,15 +5,15 @@ from django.contrib.staticfiles.views import serve
 
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
-    path('', include('index.urls', namespace='index')),
+    path("admin/", admin.site.urls),
+    path("", include("index.urls", namespace="index")),
 ]
 
 
 if settings.DEBUG:
     urlpatterns += [
-      path(r'^media/(?P<path>.*)$', serve),
-      path(r'^static/(?P<path>.*)$', serve),
+        path(r"^media/(?P<path>.*)$", serve),
+        path(r"^static/(?P<path>.*)$", serve),
     ]
 
-admin.site.site_header = 'Администрирование электронного журнала'
+admin.site.site_header = "Администрирование электронного журнала"

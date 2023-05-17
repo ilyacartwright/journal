@@ -5,36 +5,76 @@ import django.db.models.deletion
 
 
 class Migration(migrations.Migration):
-
     initial = True
 
     dependencies = [
-        ('settings', '0002_positions_alter_schools_phone'),
+        ("settings", "0002_positions_alter_schools_phone"),
     ]
 
     operations = [
         migrations.CreateModel(
-            name='Employees',
+            name="Employees",
             fields=[
-                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('identifier', models.CharField(max_length=50, verbose_name='Идентикификатор/Логин')),
-                ('password', models.CharField(max_length=50, verbose_name='Пароль')),
-                ('first_name', models.CharField(max_length=50, verbose_name='Имя')),
-                ('last_name', models.CharField(max_length=50, verbose_name='Фамилия')),
-                ('surname', models.CharField(blank=True, max_length=50, null=True, verbose_name='Отчество')),
+                (
+                    "id",
+                    models.BigAutoField(
+                        auto_created=True,
+                        primary_key=True,
+                        serialize=False,
+                        verbose_name="ID",
+                    ),
+                ),
+                (
+                    "identifier",
+                    models.CharField(
+                        max_length=50, verbose_name="Идентикификатор/Логин"
+                    ),
+                ),
+                ("password", models.CharField(max_length=50, verbose_name="Пароль")),
+                ("first_name", models.CharField(max_length=50, verbose_name="Имя")),
+                ("last_name", models.CharField(max_length=50, verbose_name="Фамилия")),
+                (
+                    "surname",
+                    models.CharField(
+                        blank=True, max_length=50, null=True, verbose_name="Отчество"
+                    ),
+                ),
             ],
             options={
-                'verbose_name': 'Employees',
-                'verbose_name_plural': 'Employee',
+                "verbose_name": "Employees",
+                "verbose_name_plural": "Employee",
             },
         ),
         migrations.CreateModel(
-            name='PlaceWork',
+            name="PlaceWork",
             fields=[
-                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('employees', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='school.employees', verbose_name='Сотрудник')),
-                ('position', models.ManyToManyField(to='settings.positions', verbose_name='Должность')),
-                ('school', models.ManyToManyField(to='settings.schools', verbose_name='Школа')),
+                (
+                    "id",
+                    models.BigAutoField(
+                        auto_created=True,
+                        primary_key=True,
+                        serialize=False,
+                        verbose_name="ID",
+                    ),
+                ),
+                (
+                    "employees",
+                    models.ForeignKey(
+                        on_delete=django.db.models.deletion.CASCADE,
+                        to="school.employees",
+                        verbose_name="Сотрудник",
+                    ),
+                ),
+                (
+                    "position",
+                    models.ManyToManyField(
+                        to="settings.positions", verbose_name="Должность"
+                    ),
+                ),
+                (
+                    "school",
+                    models.ManyToManyField(to="settings.schools", verbose_name="Школа"),
+                ),
             ],
         ),
     ]
