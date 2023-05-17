@@ -3,5 +3,6 @@
 {% block context %}
 
 {{ object }}
+{{ request.user.get_full_name }}
 
 {% endblock context %}

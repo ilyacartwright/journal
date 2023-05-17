@@ -10,6 +10,7 @@ class Employees(models.Model):
     management = models.BooleanField(
         _("Сотрудник может иметь класное руководство?"), null=True, blank=True
     )
+    is_administrator = models.BooleanField(_("Администратор?"), default=False, null=True, blank=True)
 
     class Meta:
         verbose_name = "Сотрудник"
