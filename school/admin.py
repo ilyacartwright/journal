@@ -11,7 +11,7 @@ class AdminEmpluyees(admin.ModelAdmin):
     inlines = [
         AdminPlaceWork,
     ]
-    list_display = ["last_name", "first_name", "surname"]
+    list_display = ["user"]
 
 
 @admin.register(Cabinet)
