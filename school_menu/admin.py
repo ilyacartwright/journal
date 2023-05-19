@@ -1,19 +1,10 @@
 from django.contrib import admin
-from .models import Partners, PartnersItems, Sites, SitesItems
+from .models import Menu, MenuItems
 
-class PartnersItemsInline(admin.TabularInline):
-    model = PartnersItems
+class MenuItemsInline(admin.TabularInline):
+    model = MenuItems
 
-@admin.register(Partners)
+@admin.register(Menu)
 class PartnersAdmin(admin.ModelAdmin):
-    inlines = [PartnersItemsInline, ]
-    list_display = ['school']
-
-
-class SitesItemsInline(admin.TabularInline):
-    model = SitesItems
-
-@admin.register(Sites)
-class SitesAdmin(admin.ModelAdmin):
-    inlines = [SitesItemsInline, ]
-    list_display = ['school']
+    inlines = [MenuItemsInline, ]
+    list_display = ['school', 'title']

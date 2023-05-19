@@ -6,7 +6,7 @@ import datetime
 
 from settings.models import Schools
 from .models import Employees
-from school_menu.models import Sites, Partners
+from school_menu.models import Menu
 
 
 class SchoolView(LoginRequiredMixin, DetailView):
@@ -19,8 +19,7 @@ class SchoolView(LoginRequiredMixin, DetailView):
         # import ipdb; ipdb.set_trace()
         
         context["employees"] = Employees.objects.filter(user=self.request.user)
-        context["menu_partners"] = Partners.objects.filter(school=self.object)
-        context["menu_sites"] = Sites.objects.filter(school=self.object)
+        context["menu"] = Menu.objects.filter(school=self.object)
         context['date'] = datetime.datetime.now()
         return context
     
