@@ -1,11 +1,11 @@
-{% load static %}
+{% load static i18n %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>{% block title %}{% endblock title %} | {{ object }}</title>
     <link rel="stylesheet" href="{% static 'dict/app.css' %}">
 
 </head>
@@ -66,7 +66,7 @@
               <div class="row">
                 <div class="col-7">
                   <ul class="header-second-menu">
-                    <li class="header-second-menu-item item-home"><a href="">Главная</a></li>
+                    <li class="header-second-menu-item item-home"><a href="">{% trans "Главная" %}</a></li>
                     <li class="header-second-menu-item ">b</li>
                   </ul>
                 </div>
